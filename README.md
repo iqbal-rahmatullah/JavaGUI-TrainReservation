@@ -1,7 +1,7 @@
 ## Usage
 
 ```bash
-Please don't forget to install jCalendar : https://toedter.com/jcalendar/ so that the program does not error
+Please dont forget to install jCalendar : https://toedter.com/jcalendar/ so that the program does not error
 ```
     
 ## 🔗 Contact
