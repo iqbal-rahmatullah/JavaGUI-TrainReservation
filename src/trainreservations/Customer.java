@@ -11,23 +11,17 @@ package trainreservations;
  */
 public class Customer {
     private String name;
-    private String email;
     private String noHP;
     private String noKTP;
 
-    public Customer(String name, String email, String noHP, String noKTP) {
+    public Customer(String name, String noHP, String noKTP) {
         this.name = name;
-        this.email = email;
         this.noHP = noHP;
         this.noKTP = noKTP;
     }
 
     public String getName() {
         return name;
-    }
-
-    public String getEmail() {
-        return email;
     }
 
     public String getNoHP() {
@@ -40,7 +34,7 @@ public class Customer {
 
     @Override
     public String toString() {
-        return "Customer{" + "name=" + name + ", email=" + email + ", noHP=" + noHP + ", noKTP=" + noKTP + '}';
+        return "Customer{" + "name=" + name + ", noHP=" + noHP + ", noKTP=" + noKTP + '}';
     }
 
     

@@ -15,9 +15,9 @@ public class Main {
 
     public static void main(String[] args) {
         Seat[] seats = new Seat[45];
-        Customer cust1 = new Customer("Awal", "awawa", "818181", "3122");
-        Customer cust2 = new Customer("raya", "awaweaea", "818223", "32022");
-        Customer cust3 = new Customer("iqbl", "aaiai", "91911", "789122");
+        Customer cust1 = new Customer("Awal", "818181", "3122");
+        Customer cust2 = new Customer("raya", "818223", "32022");
+        Customer cust3 = new Customer("iqbl", "91911", "789122");
 
         Kereta kereta1 = new Kereta("Majapahit", "Surabaya", "Jakarta", "Lokal");
         Kereta kereta2 = new Kereta("Arjuna", "Surabaya", "Bandung", "Antarkota");

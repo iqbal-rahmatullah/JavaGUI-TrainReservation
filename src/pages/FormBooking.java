@@ -15,6 +15,9 @@ public class FormBooking extends javax.swing.JFrame {
      */
     public FormBooking() {
         initComponents();
+        keretaField.setEnabled(false);
+        seatField.setEnabled(false);
+        tanggalField.setEnabled(false);
     }
 
     /**
@@ -26,17 +29,144 @@ public class FormBooking extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        rightPanel = new javax.swing.JPanel();
+        Applogo = new javax.swing.JLabel();
+        Train = new javax.swing.JLabel();
+        Train1 = new javax.swing.JLabel();
+        keretaField = new javax.swing.JTextField();
+        keretaLabel = new javax.swing.JLabel();
+        seatField = new javax.swing.JTextField();
+        seatLabel = new javax.swing.JLabel();
+        nameField = new javax.swing.JTextField();
+        nameLabel = new javax.swing.JLabel();
+        ktpField = new javax.swing.JTextField();
+        ktpLabel = new javax.swing.JLabel();
+        telpLabel = new javax.swing.JLabel();
+        telpField = new javax.swing.JTextField();
+        btnBooking = new javax.swing.JButton();
+        tanggalField = new javax.swing.JTextField();
+        tanggalLabel = new javax.swing.JLabel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        rightPanel.setBackground(new java.awt.Color(41, 128, 185));
+
+        Applogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/applogo.png"))); // NOI18N
+
+        Train.setFont(new java.awt.Font("PT Sans Narrow", 1, 36)); // NOI18N
+        Train.setForeground(new java.awt.Color(255, 255, 255));
+        Train.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Train.setText("RESERVATION");
+
+        Train1.setFont(new java.awt.Font("PT Sans Narrow", 1, 36)); // NOI18N
+        Train1.setForeground(new java.awt.Color(255, 255, 255));
+        Train1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Train1.setText("KERETA LOCAL");
+
+        javax.swing.GroupLayout rightPanelLayout = new javax.swing.GroupLayout(rightPanel);
+        rightPanel.setLayout(rightPanelLayout);
+        rightPanelLayout.setHorizontalGroup(
+            rightPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, rightPanelLayout.createSequentialGroup()
+                .addContainerGap(88, Short.MAX_VALUE)
+                .addGroup(rightPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Train1)
+                    .addGroup(rightPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, rightPanelLayout.createSequentialGroup()
+                            .addComponent(Train)
+                            .addGap(10, 10, 10))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, rightPanelLayout.createSequentialGroup()
+                            .addComponent(Applogo)
+                            .addGap(54, 54, 54))))
+                .addGap(75, 75, 75))
+        );
+        rightPanelLayout.setVerticalGroup(
+            rightPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(rightPanelLayout.createSequentialGroup()
+                .addGap(94, 94, 94)
+                .addComponent(Applogo)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(Train1)
+                .addGap(2, 2, 2)
+                .addComponent(Train)
+                .addContainerGap(126, Short.MAX_VALUE))
+        );
+
+        keretaLabel.setText("Kereta : ");
+
+        seatLabel.setText("Seat : ");
+
+        nameLabel.setText("Nama :");
+
+        ktpLabel.setText("KTP :");
+
+        telpLabel.setText("No Hp :");
+
+        btnBooking.setBackground(new java.awt.Color(0, 153, 255));
+        btnBooking.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
+        btnBooking.setForeground(new java.awt.Color(255, 255, 255));
+        btnBooking.setText("Booking");
+
+        tanggalLabel.setText("Tanggal : ");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(rightPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(keretaField, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(keretaLabel)
+                            .addComponent(seatField, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(seatLabel)
+                            .addComponent(nameField, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(nameLabel)
+                            .addComponent(ktpField, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(ktpLabel)
+                            .addComponent(telpField, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(telpLabel)
+                            .addComponent(tanggalField, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tanggalLabel)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(107, 107, 107)
+                        .addComponent(btnBooking)))
+                .addGap(0, 25, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(rightPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addComponent(keretaLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(keretaField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(seatLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(seatField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(tanggalLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(tanggalField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(2, 2, 2)
+                .addComponent(nameLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(nameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(ktpLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(ktpField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(telpLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(telpField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btnBooking)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -78,5 +208,22 @@ public class FormBooking extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Applogo;
+    private javax.swing.JLabel Train;
+    private javax.swing.JLabel Train1;
+    private javax.swing.JButton btnBooking;
+    public javax.swing.JTextField keretaField;
+    private javax.swing.JLabel keretaLabel;
+    public javax.swing.JTextField ktpField;
+    private javax.swing.JLabel ktpLabel;
+    public javax.swing.JTextField nameField;
+    private javax.swing.JLabel nameLabel;
+    private javax.swing.JPanel rightPanel;
+    public javax.swing.JTextField seatField;
+    private javax.swing.JLabel seatLabel;
+    public javax.swing.JTextField tanggalField;
+    private javax.swing.JLabel tanggalLabel;
+    public javax.swing.JTextField telpField;
+    private javax.swing.JLabel telpLabel;
     // End of variables declaration//GEN-END:variables
 }
