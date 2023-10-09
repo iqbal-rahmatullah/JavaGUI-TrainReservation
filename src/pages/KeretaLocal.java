@@ -108,6 +108,11 @@ public class KeretaLocal extends javax.swing.JFrame {
                     Date selectedDate = dateField.getCalendar().getTime();
                     SimpleDateFormat dateFormat = new SimpleDateFormat("d MMM y");
                     
+                    //Mengirim data ke formBooking
+                    formBook.keretaSelected = kereta;
+                    formBook.seatSelected = kereta.getSeatList().get(seatIndex);
+                    formBook.dateSelected = dateField.getDate();
+                    
                     formBook.keretaField.setText(kereta.getNama() + " ( " + kereta.getAsal() + " - " + kereta.getTujuan() + " )");
                     formBook.seatField.setText(kereta.getSeatList().get(seatIndex).getNoSeat());
                     formBook.tanggalField.setText(dateFormat.format(selectedDate));

@@ -4,6 +4,16 @@
  */
 package pages;
 
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+import trainreservations.Customer;
+import trainreservations.Kereta;
+import trainreservations.Seat;
+import trainreservations.Tiket;
+
 /**
  *
  * @author iqbalrahmatullah
@@ -13,6 +23,12 @@ public class FormBooking extends javax.swing.JFrame {
     /**
      * Creates new form FormBooking
      */
+    public List<Tiket> allTicket = new ArrayList<>();
+    public List<Customer> allCustomer = new ArrayList<>();
+    public Kereta keretaSelected;
+    public Seat seatSelected;
+    public Date dateSelected;
+
     public FormBooking() {
         initComponents();
         keretaField.setEnabled(false);
@@ -33,6 +49,7 @@ public class FormBooking extends javax.swing.JFrame {
         Applogo = new javax.swing.JLabel();
         Train = new javax.swing.JLabel();
         Train1 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         keretaField = new javax.swing.JTextField();
         keretaLabel = new javax.swing.JLabel();
         seatField = new javax.swing.JTextField();
@@ -63,6 +80,8 @@ public class FormBooking extends javax.swing.JFrame {
         Train1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Train1.setText("KERETA LOCAL");
 
+        jLabel1.setText("jLabel1");
+
         javax.swing.GroupLayout rightPanelLayout = new javax.swing.GroupLayout(rightPanel);
         rightPanel.setLayout(rightPanelLayout);
         rightPanelLayout.setHorizontalGroup(
@@ -79,11 +98,17 @@ public class FormBooking extends javax.swing.JFrame {
                             .addComponent(Applogo)
                             .addGap(54, 54, 54))))
                 .addGap(75, 75, 75))
+            .addGroup(rightPanelLayout.createSequentialGroup()
+                .addGap(148, 148, 148)
+                .addComponent(jLabel1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         rightPanelLayout.setVerticalGroup(
             rightPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(rightPanelLayout.createSequentialGroup()
-                .addGap(94, 94, 94)
+                .addGap(37, 37, 37)
+                .addComponent(jLabel1)
+                .addGap(40, 40, 40)
                 .addComponent(Applogo)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(Train1)
@@ -106,6 +131,11 @@ public class FormBooking extends javax.swing.JFrame {
         btnBooking.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
         btnBooking.setForeground(new java.awt.Color(255, 255, 255));
         btnBooking.setText("Booking");
+        btnBooking.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBookingActionPerformed(evt);
+            }
+        });
 
         tanggalLabel.setText("Tanggal : ");
 
@@ -170,7 +200,26 @@ public class FormBooking extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnBookingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBookingActionPerformed
+        Customer newCustomer = new Customer(nameField.getText(), telpField.getText(), ktpField.getText());
+        allTicket.add(new Tiket(newCustomer, keretaSelected, dateSelected, seatSelected));
+        
+        HistoryTransaction tableTransaction = new HistoryTransaction();
+        for(int i=0;i<allTicket.size();i++) {
+            tableTransaction.addTransaction(new Object[] {
+                allTicket.get(i).getKereta().getNama(),
+                allTicket.get(i).getSeat().getNoSeat(),
+                tanggalField.getText(),
+                allTicket.get(i).getCustomer().getName(),
+                allTicket.get(i).getCustomer().getNoKTP(),
+                allTicket.get(i).getCustomer().getNoHP()
+            });
+        }
+        tableTransaction.setVisible(true);
+    }//GEN-LAST:event_btnBookingActionPerformed
 
     /**
      * @param args the command line arguments
@@ -212,6 +261,7 @@ public class FormBooking extends javax.swing.JFrame {
     private javax.swing.JLabel Train;
     private javax.swing.JLabel Train1;
     private javax.swing.JButton btnBooking;
+    private javax.swing.JLabel jLabel1;
     public javax.swing.JTextField keretaField;
     private javax.swing.JLabel keretaLabel;
     public javax.swing.JTextField ktpField;

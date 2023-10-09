@@ -34,8 +34,8 @@ public class Main {
         kereta1.addSeat(seat4);
         kereta1.addSeat(seat5);
 
-        Tiket tiket1 = new Tiket(cust1, kereta1, LocalDate.of(2023, Month.DECEMBER, 10), seat1);
-        Tiket tiket2 = new Tiket(cust2, kereta1, LocalDate.of(2023, Month.DECEMBER, 10), seat2);
+//        Tiket tiket1 = new Tiket(cust1, kereta1, LocalDate.of(2023, Month.DECEMBER, 10), seat1);
+//        Tiket tiket2 = new Tiket(cust2, kereta1, LocalDate.of(2023, Month.DECEMBER, 10), seat2);
 
     }
 ;

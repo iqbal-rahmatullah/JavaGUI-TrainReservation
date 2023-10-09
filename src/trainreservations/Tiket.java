@@ -2,6 +2,7 @@ package trainreservations;
 
 
 import java.time.LocalDate;
+import java.util.Date;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -15,10 +16,10 @@ import java.time.LocalDate;
 public class Tiket {
     private Customer customer;
     private Kereta kereta;
-    private LocalDate date;
+    private Date date;
     private Seat seat;
 
-    public Tiket(Customer customer, Kereta kereta, LocalDate date, Seat seat) {
+    public Tiket(Customer customer, Kereta kereta, Date date, Seat seat) {
         this.customer = customer;
         this.kereta = kereta;
         this.date = date;
@@ -33,7 +34,7 @@ public class Tiket {
         return kereta;
     }
 
-    public LocalDate getDate() {
+    public Date getDate() {
         return date;
     }
 
