@@ -120,6 +120,11 @@ public class Home extends javax.swing.JFrame {
 
         btn_localTrain.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(41, 128, 185), 1, true));
         btn_localTrain.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_localTrain.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_localTrainMouseClicked(evt);
+            }
+        });
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/train.png"))); // NOI18N
 
@@ -177,6 +182,12 @@ public class Home extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btn_localTrainMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_localTrainMouseClicked
+        KeretaLocal localPage = new KeretaLocal();
+        localPage.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btn_localTrainMouseClicked
 
     /**
      * @param args the command line arguments

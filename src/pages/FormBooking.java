@@ -49,7 +49,6 @@ public class FormBooking extends javax.swing.JFrame {
         Applogo = new javax.swing.JLabel();
         Train = new javax.swing.JLabel();
         Train1 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
         keretaField = new javax.swing.JTextField();
         keretaLabel = new javax.swing.JLabel();
         seatField = new javax.swing.JTextField();
@@ -80,8 +79,6 @@ public class FormBooking extends javax.swing.JFrame {
         Train1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Train1.setText("KERETA LOCAL");
 
-        jLabel1.setText("jLabel1");
-
         javax.swing.GroupLayout rightPanelLayout = new javax.swing.GroupLayout(rightPanel);
         rightPanel.setLayout(rightPanelLayout);
         rightPanelLayout.setHorizontalGroup(
@@ -98,17 +95,11 @@ public class FormBooking extends javax.swing.JFrame {
                             .addComponent(Applogo)
                             .addGap(54, 54, 54))))
                 .addGap(75, 75, 75))
-            .addGroup(rightPanelLayout.createSequentialGroup()
-                .addGap(148, 148, 148)
-                .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         rightPanelLayout.setVerticalGroup(
             rightPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(rightPanelLayout.createSequentialGroup()
-                .addGap(37, 37, 37)
-                .addComponent(jLabel1)
-                .addGap(40, 40, 40)
+                .addGap(94, 94, 94)
                 .addComponent(Applogo)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(Train1)
@@ -219,6 +210,7 @@ public class FormBooking extends javax.swing.JFrame {
             });
         }
         tableTransaction.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btnBookingActionPerformed
 
     /**
@@ -261,7 +253,6 @@ public class FormBooking extends javax.swing.JFrame {
     private javax.swing.JLabel Train;
     private javax.swing.JLabel Train1;
     private javax.swing.JButton btnBooking;
-    private javax.swing.JLabel jLabel1;
     public javax.swing.JTextField keretaField;
     private javax.swing.JLabel keretaLabel;
     public javax.swing.JTextField ktpField;
