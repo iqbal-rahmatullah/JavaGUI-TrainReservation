@@ -16,7 +16,7 @@ import javax.swing.*;
  *
  * @author iqbalrahmatullah
  */
-public class KeretaLocal extends javax.swing.JFrame {
+public class KeretaAntarkota extends javax.swing.JFrame {
 
     /**
      * Creates new form KeretaLocal
@@ -27,19 +27,19 @@ public class KeretaLocal extends javax.swing.JFrame {
     //Untuk penformatan tanggal
     SimpleDateFormat dateFormat = new SimpleDateFormat("d MMM y");
 
-    public KeretaLocal() {
+    public KeretaAntarkota() {
         initComponents();
 
-        kereta[0] = new Kereta("Majapahit", "Surabaya", "Sidoarjo", "Lokal");
-        kereta[1] = new Kereta("Arjuna", "Surabaya", "Lamongan", "Lokal");
-        kereta[2] = new Kereta("Argo Wilis", "Surabaya", "Bojonegoro", "Lokal");
-        kereta[3] = new Kereta("Turangga", "Surabaya", "Ngawi", "Lokal");
-        kereta[4] = new Kereta("Purwojaya", "Surabaya", "Nganjuk", "Lokal");
-        kereta[5] = new Kereta("Taksaka", "Surabaya", "Madiun", "Lokal");
-        kereta[6] = new Kereta("Mahahan", "Surabaya", "Ngawi", "Lokal");
-        kereta[7] = new Kereta("Bima", "Surabaya", "Pasuruan", "Lokal");
-        kereta[8] = new Kereta("Gajayana", "Surabaya", "Malang", "Lokal");
-        kereta[9] = new Kereta("Brawijaya", "Surabaya", "Jombang", "Lokal");
+        kereta[0] = new Kereta("Majapahit", "Surabaya", "Bali", "Antarkota");
+        kereta[1] = new Kereta("Arjuna", "Surabaya", "Bandung", "Antarkota");
+        kereta[2] = new Kereta("Argo Wilis", "Surabaya", "Jakarta", "Antarkota");
+        kereta[3] = new Kereta("Turangga", "Surabaya", "Bekasi", "Antarkota");
+        kereta[4] = new Kereta("Purwojaya", "Surabaya", "Karawang", "Antarkota");
+        kereta[5] = new Kereta("Taksaka", "Surabaya", "Sumedang", "Antarkota");
+        kereta[6] = new Kereta("Mahahan", "Surabaya", "Cirebon", "Antarkota");
+        kereta[7] = new Kereta("Bima", "Surabaya", "Yogyakarta", "Antarkota");
+        kereta[8] = new Kereta("Gajayana", "Surabaya", "Depok", "Antarkota");
+        kereta[9] = new Kereta("Brawijaya", "Surabaya", "Bogor", "Antarkota");
 
         //Configure seat kereta
         for (int i = 0; i < kereta.length; i++) {
@@ -105,7 +105,7 @@ public class KeretaLocal extends javax.swing.JFrame {
                         //Mengecek tanggal ticket yang sudah sold
                         if (dateFormat.format(dateField.getCalendar().getTime()).equals(dateFormat.format(FormBooking.allTicket.get(j).getDate()))) {
                             listSeat[i].setEnabled(false);
-                        }else {
+                        } else {
                             listSeat[i].setEnabled(true);
                         }
                     }
@@ -357,20 +357,23 @@ public class KeretaLocal extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(KeretaLocal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(KeretaAntarkota.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(KeretaLocal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(KeretaAntarkota.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(KeretaLocal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(KeretaAntarkota.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(KeretaLocal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(KeretaAntarkota.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new KeretaLocal().setVisible(true);
+                new KeretaAntarkota().setVisible(true);
             }
         });
     }

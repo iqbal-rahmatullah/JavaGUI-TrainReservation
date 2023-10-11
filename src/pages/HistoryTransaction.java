@@ -32,6 +32,7 @@ public class HistoryTransaction extends javax.swing.JFrame {
         Applogo = new javax.swing.JLabel();
         Train = new javax.swing.JLabel();
         Train1 = new javax.swing.JLabel();
+        homeButton = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         transactionTable = new javax.swing.JTable();
 
@@ -51,23 +52,38 @@ public class HistoryTransaction extends javax.swing.JFrame {
         Train1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Train1.setText("HISTORY");
 
+        homeButton.setBackground(new java.awt.Color(255, 153, 0));
+        homeButton.setForeground(new java.awt.Color(255, 255, 255));
+        homeButton.setText("Back To Home");
+        homeButton.setToolTipText("");
+        homeButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        homeButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                homeButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout rightPanelLayout = new javax.swing.GroupLayout(rightPanel);
         rightPanel.setLayout(rightPanelLayout);
         rightPanelLayout.setHorizontalGroup(
             rightPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, rightPanelLayout.createSequentialGroup()
+            .addGroup(rightPanelLayout.createSequentialGroup()
                 .addContainerGap(88, Short.MAX_VALUE)
                 .addGroup(rightPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(rightPanelLayout.createSequentialGroup()
-                        .addGroup(rightPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Train, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, rightPanelLayout.createSequentialGroup()
-                                .addComponent(Applogo)
-                                .addGap(44, 44, 44)))
-                        .addGap(85, 85, 85))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, rightPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(rightPanelLayout.createSequentialGroup()
+                            .addGroup(rightPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(Train, javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, rightPanelLayout.createSequentialGroup()
+                                    .addComponent(Applogo)
+                                    .addGap(44, 44, 44)))
+                            .addGap(85, 85, 85))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, rightPanelLayout.createSequentialGroup()
+                            .addComponent(Train1)
+                            .addGap(120, 120, 120)))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, rightPanelLayout.createSequentialGroup()
-                        .addComponent(Train1)
-                        .addGap(120, 120, 120))))
+                        .addComponent(homeButton, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(113, 113, 113))))
         );
         rightPanelLayout.setVerticalGroup(
             rightPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -78,6 +94,8 @@ public class HistoryTransaction extends javax.swing.JFrame {
                 .addComponent(Train1)
                 .addGap(2, 2, 2)
                 .addComponent(Train)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(homeButton, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -86,14 +104,14 @@ public class HistoryTransaction extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Kereta", "Seat", "Tanggal", "Nama", "No KTP", "No HP"
+                "Kereta", "Rute", "Seat", "Tanggal", "Nama", "No KTP", "No HP"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, true, false, false
+                false, false, false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -110,7 +128,9 @@ public class HistoryTransaction extends javax.swing.JFrame {
             transactionTable.getColumnModel().getColumn(1).setResizable(false);
             transactionTable.getColumnModel().getColumn(2).setResizable(false);
             transactionTable.getColumnModel().getColumn(3).setResizable(false);
+            transactionTable.getColumnModel().getColumn(4).setResizable(false);
             transactionTable.getColumnModel().getColumn(5).setResizable(false);
+            transactionTable.getColumnModel().getColumn(6).setResizable(false);
         }
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -120,7 +140,7 @@ public class HistoryTransaction extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(rightPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 684, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 885, Short.MAX_VALUE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -135,6 +155,12 @@ public class HistoryTransaction extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void homeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homeButtonActionPerformed
+        Home halamanAwal = new Home();
+        halamanAwal.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_homeButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -175,11 +201,17 @@ public class HistoryTransaction extends javax.swing.JFrame {
         DefaultTableModel model = (DefaultTableModel) transactionTable.getModel();
         model.addRow(transaction);
     }
+    
+    public static void clearTransaction() {
+        DefaultTableModel model = (DefaultTableModel) transactionTable.getModel();
+        model.setRowCount(0);
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Applogo;
     private javax.swing.JLabel Train;
     private javax.swing.JLabel Train1;
+    private javax.swing.JButton homeButton;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JPanel rightPanel;
     public static javax.swing.JTable transactionTable;

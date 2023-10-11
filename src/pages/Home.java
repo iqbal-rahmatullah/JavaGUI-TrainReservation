@@ -33,6 +33,7 @@ public class Home extends javax.swing.JFrame {
         Applogo = new javax.swing.JLabel();
         Train = new javax.swing.JLabel();
         Train1 = new javax.swing.JLabel();
+        buttonHistory = new javax.swing.JButton();
         btn_intercityTrain = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -56,14 +57,20 @@ public class Home extends javax.swing.JFrame {
         Train1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Train1.setText("TRAIN");
 
+        buttonHistory.setBackground(new java.awt.Color(51, 102, 255));
+        buttonHistory.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        buttonHistory.setForeground(new java.awt.Color(255, 255, 255));
+        buttonHistory.setText("History Transaction");
+        buttonHistory.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonHistoryActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(84, Short.MAX_VALUE)
-                .addComponent(Train)
-                .addGap(73, 73, 73))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(120, 120, 120)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -72,6 +79,14 @@ public class Home extends javax.swing.JFrame {
                         .addGap(6, 6, 6)
                         .addComponent(Train1)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(84, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Train)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(buttonHistory)
+                        .addGap(17, 17, 17)))
+                .addGap(73, 73, 73))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -82,11 +97,18 @@ public class Home extends javax.swing.JFrame {
                 .addComponent(Train1)
                 .addGap(2, 2, 2)
                 .addComponent(Train)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(buttonHistory, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         btn_intercityTrain.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(41, 128, 185), 1, true));
         btn_intercityTrain.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_intercityTrain.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_intercityTrainMouseClicked(evt);
+            }
+        });
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/train.png"))); // NOI18N
 
@@ -189,6 +211,17 @@ public class Home extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btn_localTrainMouseClicked
 
+    private void btn_intercityTrainMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_intercityTrainMouseClicked
+        KeretaAntarkota antarKota = new KeretaAntarkota();
+        antarKota.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btn_intercityTrainMouseClicked
+
+    private void buttonHistoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonHistoryActionPerformed
+        FormBooking.tableTransaction.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_buttonHistoryActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -233,6 +266,7 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JLabel Train1;
     private javax.swing.JPanel btn_intercityTrain;
     private javax.swing.JPanel btn_localTrain;
+    private javax.swing.JButton buttonHistory;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

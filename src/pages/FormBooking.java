@@ -9,6 +9,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import javax.swing.JOptionPane;
 import trainreservations.Customer;
 import trainreservations.Kereta;
 import trainreservations.Seat;
@@ -23,17 +24,30 @@ public class FormBooking extends javax.swing.JFrame {
     /**
      * Creates new form FormBooking
      */
-    public List<Tiket> allTicket = new ArrayList<>();
+    public static List<Tiket> allTicket = new ArrayList<>();
     public List<Customer> allCustomer = new ArrayList<>();
     public Kereta keretaSelected;
     public Seat seatSelected;
     public Date dateSelected;
+    
+    //Deklarasi halaman History Transaction dan Home
+    public static HistoryTransaction tableTransaction = new HistoryTransaction();
+    public Home halamanAwal = new Home();
+    
 
     public FormBooking() {
         initComponents();
         keretaField.setEnabled(false);
         seatField.setEnabled(false);
         tanggalField.setEnabled(false);
+    }
+    void emptyForm() {
+        keretaField.setText("");
+        seatField.setText("");
+        tanggalField.setText("");
+        nameField.setText("");
+        telpField.setText("");
+        ktpField.setText("");
     }
 
     /**
@@ -107,6 +121,12 @@ public class FormBooking extends javax.swing.JFrame {
                 .addComponent(Train)
                 .addContainerGap(126, Short.MAX_VALUE))
         );
+
+        keretaField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                keretaFieldActionPerformed(evt);
+            }
+        });
 
         keretaLabel.setText("Kereta : ");
 
@@ -197,21 +217,29 @@ public class FormBooking extends javax.swing.JFrame {
     private void btnBookingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBookingActionPerformed
         Customer newCustomer = new Customer(nameField.getText(), telpField.getText(), ktpField.getText());
         allTicket.add(new Tiket(newCustomer, keretaSelected, dateSelected, seatSelected));
-        
-        HistoryTransaction tableTransaction = new HistoryTransaction();
-        for(int i=0;i<allTicket.size();i++) {
-            tableTransaction.addTransaction(new Object[] {
+
+        tableTransaction.clearTransaction();
+        for (int i = 0; i < allTicket.size(); i++) {
+            tableTransaction.addTransaction(new Object[]{
                 allTicket.get(i).getKereta().getNama(),
-                allTicket.get(i).getSeat().getNoSeat(),
+                allTicket.get(i).getKereta().getAsal() + " - " + allTicket.get(i).getKereta().getTujuan(),
+                allTicket.get(i).getSeat().getNoSeat() + " (" + allTicket.get(i).getSeat().getTipe() + " )",
                 tanggalField.getText(),
                 allTicket.get(i).getCustomer().getName(),
                 allTicket.get(i).getCustomer().getNoKTP(),
                 allTicket.get(i).getCustomer().getNoHP()
             });
         }
-        tableTransaction.setVisible(true);
+//        tableTransaction.setVisible(true);
+        emptyForm();
+        JOptionPane.showMessageDialog(this, "Order Success!");
+        halamanAwal.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnBookingActionPerformed
+
+    private void keretaFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_keretaFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_keretaFieldActionPerformed
 
     /**
      * @param args the command line arguments
