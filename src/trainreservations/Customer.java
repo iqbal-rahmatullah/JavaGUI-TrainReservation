@@ -20,18 +20,34 @@ public class Customer {
         this.noKTP = noKTP;
     }
 
+    /**
+     *
+     * @return mengembalikan nama customer
+     */
     public String getName() {
         return name;
     }
 
+    /**
+     *
+     * @return mengembalikan nomor hp
+     */
     public String getNoHP() {
         return noHP;
     }
 
+    /**
+     *
+     * @return mengembalikan nomor ktp
+     */
     public String getNoKTP() {
         return noKTP;
     }
 
+    /**
+     *
+     * @return menampilkan data customer
+     */
     @Override
     public String toString() {
         return "Customer{" + "name=" + name + ", noHP=" + noHP + ", noKTP=" + noKTP + '}';

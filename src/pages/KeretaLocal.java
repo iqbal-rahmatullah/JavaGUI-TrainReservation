@@ -45,7 +45,8 @@ public class KeretaLocal extends javax.swing.JFrame {
         for (int i = 0; i < kereta.length; i++) {
             kereta[i].configureSeat();
         }
-
+        
+        dateField.setMinSelectableDate(new Date());
         addInputComboBox();
 //        kereta1.addSeat(seat1);
 //        kereta1.addSeat(seat2);

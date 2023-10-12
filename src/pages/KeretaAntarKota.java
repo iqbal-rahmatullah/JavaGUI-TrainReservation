@@ -46,6 +46,7 @@ public class KeretaAntarkota extends javax.swing.JFrame {
             kereta[i].configureSeat();
         }
 
+        dateField.setMinSelectableDate(new Date());
         addInputComboBox();
 //        kereta1.addSeat(seat1);
 //        kereta1.addSeat(seat2);

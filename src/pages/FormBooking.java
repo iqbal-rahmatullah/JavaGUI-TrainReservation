@@ -29,11 +29,12 @@ public class FormBooking extends javax.swing.JFrame {
     public Kereta keretaSelected;
     public Seat seatSelected;
     public Date dateSelected;
-    
+
     //Deklarasi halaman History Transaction dan Home
     public static HistoryTransaction tableTransaction = new HistoryTransaction();
     public Home halamanAwal = new Home();
-    
+
+    SimpleDateFormat dateFormat = new SimpleDateFormat("d MMM y");
 
     public FormBooking() {
         initComponents();
@@ -41,6 +42,7 @@ public class FormBooking extends javax.swing.JFrame {
         seatField.setEnabled(false);
         tanggalField.setEnabled(false);
     }
+
     void emptyForm() {
         keretaField.setText("");
         seatField.setText("");
@@ -224,7 +226,7 @@ public class FormBooking extends javax.swing.JFrame {
                 allTicket.get(i).getKereta().getNama(),
                 allTicket.get(i).getKereta().getAsal() + " - " + allTicket.get(i).getKereta().getTujuan(),
                 allTicket.get(i).getSeat().getNoSeat() + " (" + allTicket.get(i).getSeat().getTipe() + " )",
-                tanggalField.getText(),
+                dateFormat.format(allTicket.get(i).getDate()),
                 allTicket.get(i).getCustomer().getName(),
                 allTicket.get(i).getCustomer().getNoKTP(),
                 allTicket.get(i).getCustomer().getNoHP()
