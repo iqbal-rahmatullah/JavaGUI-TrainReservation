@@ -53,11 +53,17 @@ public class Kereta {
         return seatList;
     }
     public void configureSeat() {
-        Seat[] allSeat = new Seat[30];
+        Seat[] allSeat = new Seat[32];
         char code = 'A';
         int gerbong = 1;
         for(int i=0;i<allSeat.length;i++) {
-            allSeat[i] = new Seat( String.valueOf(i + 1) + code, gerbong, "Ekonomi");
+            if(i < 10) {
+                allSeat[i] = new Seat( String.valueOf(i + 1) + code, gerbong, "Ekonomi");
+            }else if(i < 20) {
+                allSeat[i] = new Seat( String.valueOf(i + 1) + code, gerbong, "Bisnis");
+            }else {
+                allSeat[i] = new Seat( String.valueOf(i + 1) + code, gerbong, "Eksekutif");
+            }
             
             //setiap kelipatan 10
             if(i % 10 == 0) {

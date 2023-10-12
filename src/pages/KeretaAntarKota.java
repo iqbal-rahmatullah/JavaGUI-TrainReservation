@@ -204,7 +204,7 @@ public class KeretaAntarkota extends javax.swing.JFrame {
         Train1.setFont(new java.awt.Font("PT Sans Narrow", 1, 36)); // NOI18N
         Train1.setForeground(new java.awt.Color(255, 255, 255));
         Train1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Train1.setText("KERETA LOCAL");
+        Train1.setText("KERETA ANTARKOTA");
 
         buttonHome.setBackground(new java.awt.Color(255, 153, 0));
         buttonHome.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
@@ -221,9 +221,9 @@ public class KeretaAntarkota extends javax.swing.JFrame {
         rightPanelLayout.setHorizontalGroup(
             rightPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(rightPanelLayout.createSequentialGroup()
-                .addContainerGap(83, Short.MAX_VALUE)
-                .addGroup(rightPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(rightPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addContainerGap(43, Short.MAX_VALUE)
+                .addGroup(rightPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, rightPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, rightPanelLayout.createSequentialGroup()
                             .addComponent(Applogo)
                             .addGap(134, 134, 134))
@@ -234,9 +234,9 @@ public class KeretaAntarkota extends javax.swing.JFrame {
                             .addGap(22, 22, 22)
                             .addComponent(buttonHome, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addContainerGap()))
-                    .addGroup(rightPanelLayout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, rightPanelLayout.createSequentialGroup()
                         .addComponent(Train1)
-                        .addGap(80, 80, 80))))
+                        .addGap(40, 40, 40))))
         );
         rightPanelLayout.setVerticalGroup(
             rightPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
