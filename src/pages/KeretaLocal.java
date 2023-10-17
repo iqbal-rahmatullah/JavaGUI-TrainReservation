@@ -4,6 +4,7 @@
  */
 package pages;
 
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -45,8 +46,9 @@ public class KeretaLocal extends javax.swing.JFrame {
         for (int i = 0; i < kereta.length; i++) {
             kereta[i].configureSeat();
         }
-        
+
         dateField.setMinSelectableDate(new Date());
+
         addInputComboBox();
 //        kereta1.addSeat(seat1);
 //        kereta1.addSeat(seat2);
@@ -99,6 +101,11 @@ public class KeretaLocal extends javax.swing.JFrame {
             listSeat[i] = new JButton(kereta.getSeatList().get(i).getNoSeat());
             listSeat[i].setBounds(x, y, buttonWidth, buttonHeight);
             seatPanel.add(listSeat[i]);
+            if(kereta.getSeatList().get(i).getTipe().equalsIgnoreCase("Bisnis")) {
+                listSeat[i].setBackground(Color.ORANGE);
+            }else if(kereta.getSeatList().get(i).getTipe().equalsIgnoreCase("Eksekutif")) {
+                listSeat[i].setBackground(Color.GREEN);
+            }
             //Mengecek apakah ticket sudah laku
             for (int j = 0; j < FormBooking.allTicket.size(); j++) {
                 if (kereta.getNama().equalsIgnoreCase(FormBooking.allTicket.get(j).getKereta().getNama())) {
@@ -106,7 +113,7 @@ public class KeretaLocal extends javax.swing.JFrame {
                         //Mengecek tanggal ticket yang sudah sold
                         if (dateFormat.format(dateField.getCalendar().getTime()).equals(dateFormat.format(FormBooking.allTicket.get(j).getDate()))) {
                             listSeat[i].setEnabled(false);
-                        }else {
+                        } else {
                             listSeat[i].setEnabled(true);
                         }
                     }
@@ -174,6 +181,10 @@ public class KeretaLocal extends javax.swing.JFrame {
         Train = new javax.swing.JLabel();
         Train1 = new javax.swing.JLabel();
         buttonHome = new javax.swing.JButton();
+        bisnisTanda = new javax.swing.JPanel();
+        BisnisLabel = new javax.swing.JLabel();
+        EksekutifTanda = new javax.swing.JPanel();
+        eksekutifLabel = new javax.swing.JLabel();
         inputAsal = new javax.swing.JComboBox<>();
         inputTujuan = new javax.swing.JComboBox<>();
         btn_submit = new javax.swing.JButton();
@@ -217,32 +228,84 @@ public class KeretaLocal extends javax.swing.JFrame {
             }
         });
 
+        bisnisTanda.setBackground(new java.awt.Color(255, 153, 51));
+
+        javax.swing.GroupLayout bisnisTandaLayout = new javax.swing.GroupLayout(bisnisTanda);
+        bisnisTanda.setLayout(bisnisTandaLayout);
+        bisnisTandaLayout.setHorizontalGroup(
+            bisnisTandaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 24, Short.MAX_VALUE)
+        );
+        bisnisTandaLayout.setVerticalGroup(
+            bisnisTandaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 22, Short.MAX_VALUE)
+        );
+
+        BisnisLabel.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        BisnisLabel.setForeground(new java.awt.Color(255, 255, 255));
+        BisnisLabel.setText("Bisnis");
+
+        EksekutifTanda.setBackground(new java.awt.Color(102, 204, 0));
+        EksekutifTanda.setPreferredSize(new java.awt.Dimension(24, 22));
+
+        javax.swing.GroupLayout EksekutifTandaLayout = new javax.swing.GroupLayout(EksekutifTanda);
+        EksekutifTanda.setLayout(EksekutifTandaLayout);
+        EksekutifTandaLayout.setHorizontalGroup(
+            EksekutifTandaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 24, Short.MAX_VALUE)
+        );
+        EksekutifTandaLayout.setVerticalGroup(
+            EksekutifTandaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 22, Short.MAX_VALUE)
+        );
+
+        eksekutifLabel.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        eksekutifLabel.setForeground(new java.awt.Color(255, 255, 255));
+        eksekutifLabel.setText("Eksekutif");
+
         javax.swing.GroupLayout rightPanelLayout = new javax.swing.GroupLayout(rightPanel);
         rightPanel.setLayout(rightPanelLayout);
         rightPanelLayout.setHorizontalGroup(
             rightPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(rightPanelLayout.createSequentialGroup()
-                .addContainerGap(83, Short.MAX_VALUE)
-                .addGroup(rightPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(rightPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, rightPanelLayout.createSequentialGroup()
-                            .addComponent(Applogo)
-                            .addGap(134, 134, 134))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, rightPanelLayout.createSequentialGroup()
-                            .addComponent(Train)
-                            .addGap(90, 90, 90))
+                .addContainerGap(84, Short.MAX_VALUE)
+                .addGroup(rightPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, rightPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(rightPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, rightPanelLayout.createSequentialGroup()
+                                .addComponent(Train)
+                                .addGap(90, 90, 90))
+                            .addGroup(rightPanelLayout.createSequentialGroup()
+                                .addGap(22, 22, 22)
+                                .addComponent(buttonHome, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addContainerGap()))
                         .addGroup(rightPanelLayout.createSequentialGroup()
-                            .addGap(22, 22, 22)
-                            .addComponent(buttonHome, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addContainerGap()))
-                    .addGroup(rightPanelLayout.createSequentialGroup()
-                        .addComponent(Train1)
-                        .addGap(80, 80, 80))))
+                            .addGroup(rightPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(Train1)
+                                .addGroup(rightPanelLayout.createSequentialGroup()
+                                    .addGap(8, 8, 8)
+                                    .addComponent(bisnisTanda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(BisnisLabel)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(EksekutifTanda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(eksekutifLabel)))
+                            .addGap(80, 80, 80)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, rightPanelLayout.createSequentialGroup()
+                        .addComponent(Applogo)
+                        .addGap(134, 134, 134))))
         );
         rightPanelLayout.setVerticalGroup(
             rightPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(rightPanelLayout.createSequentialGroup()
-                .addGap(73, 73, 73)
+                .addGap(18, 18, 18)
+                .addGroup(rightPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(bisnisTanda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BisnisLabel)
+                    .addComponent(EksekutifTanda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(eksekutifLabel))
+                .addGap(33, 33, 33)
                 .addComponent(Applogo)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(Train1)
@@ -285,7 +348,7 @@ public class KeretaLocal extends javax.swing.JFrame {
                 .addComponent(rightPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 20, Short.MAX_VALUE)
+                        .addGap(18, 19, Short.MAX_VALUE)
                         .addComponent(seatPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -378,11 +441,15 @@ public class KeretaLocal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Applogo;
+    private javax.swing.JLabel BisnisLabel;
+    private javax.swing.JPanel EksekutifTanda;
     private javax.swing.JLabel Train;
     private javax.swing.JLabel Train1;
+    private javax.swing.JPanel bisnisTanda;
     private javax.swing.JButton btn_submit;
     private javax.swing.JButton buttonHome;
     private com.toedter.calendar.JDateChooser dateField;
+    private javax.swing.JLabel eksekutifLabel;
     private javax.swing.JComboBox<String> inputAsal;
     private javax.swing.JComboBox<String> inputTujuan;
     private javax.swing.JFrame listSeatFrame;

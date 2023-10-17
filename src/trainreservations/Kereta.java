@@ -28,27 +28,53 @@ public class Kereta {
         seatList = new LinkedList<Seat> ();
         
     }
+
+    /**
+     *
+     * @param s jumlah kursi
+     * @return menambahkan jumlah kursi
+     */
     public boolean addSeat(Seat s){
         seatList.add(s);
         return true;
     }
     
+    /**
+     *
+     * @return mengambil nama kereta
+     */
     public String getNama() {
         return nama;
     }
 
+    /**
+     *
+     * @return mengambil asal kereta
+     */
     public String getAsal() {
         return asal;
     }
 
+    /**
+     *
+     * @return mengambil tujuan kereta
+     */
     public String getTujuan() {
         return tujuan;
     }
 
+    /**
+     *
+     * @return mengambil tipe kereta
+     */
     public String getTipeKereta() {
         return tipeKereta;
     }
 
+    /**
+     *
+     * @return mengambil list seat
+     */
     public List<Seat> getSeatList() {
         return seatList;
     }

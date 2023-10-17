@@ -26,18 +26,34 @@ public class Tiket {
         this.seat = seat;
     }
 
+    /**
+     *
+     * @return mengambil data customer
+     */
     public Customer getCustomer() {
         return customer;
     }
 
+    /**
+     *
+     * @return mengambil data kereta
+     */
     public Kereta getKereta() {
         return kereta;
     }
 
+    /**
+     *
+     * @return mengambil data tanggal
+     */
     public Date getDate() {
         return date;
     }
 
+    /**
+     *
+     * @return mengambil data seat
+     */
     public Seat getSeat() {
         return seat;
     }

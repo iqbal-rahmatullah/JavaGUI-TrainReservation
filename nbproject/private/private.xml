@@ -4,11 +4,13 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/Users/iqbalrahmatullah/NetBeansProjects/TrainReservations/src/trainreservations/Customer.java</file>
+            <file>file:/Users/iqbalrahmatullah/NetBeansProjects/TrainReservations/src/trainreservations/Main.java</file>
             <file>file:/Users/iqbalrahmatullah/NetBeansProjects/TrainReservations/src/trainreservations/Kereta.java</file>
             <file>file:/Users/iqbalrahmatullah/NetBeansProjects/TrainReservations/src/pages/KeretaLocal.java</file>
             <file>file:/Users/iqbalrahmatullah/NetBeansProjects/TrainReservations/src/trainreservations/Tiket.java</file>
             <file>file:/Users/iqbalrahmatullah/NetBeansProjects/TrainReservations/src/trainreservations/TrainReservations.java</file>
             <file>file:/Users/iqbalrahmatullah/NetBeansProjects/TrainReservations/src/pages/FormBooking.java</file>
+            <file>file:/Users/iqbalrahmatullah/NetBeansProjects/TrainReservations/src/trainreservations/Seat.java</file>
             <file>file:/Users/iqbalrahmatullah/NetBeansProjects/TrainReservations/src/pages/Home.java</file>
             <file>file:/Users/iqbalrahmatullah/NetBeansProjects/TrainReservations/src/pages/KeretaAntarkota.java</file>
             <file>file:/Users/iqbalrahmatullah/NetBeansProjects/TrainReservations/src/pages/HistoryTransaction.java</file>
