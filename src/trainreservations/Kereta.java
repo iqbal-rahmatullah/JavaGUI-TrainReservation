@@ -10,8 +10,9 @@ import java.util.List;
  */
 
 /**
+ * Class Kereta untuk mempresentasikan kereta yang yang tersedia untuk dipesan Customer
  *
- * @author ASUS
+ * @author Kelompok 3
  */
 public class Kereta {
     private String nama;
@@ -20,6 +21,14 @@ public class Kereta {
     private List<Seat> seatList;
     private String tipeKereta;
 
+    /**
+     * Constructor untuk memberi nilai variabel yang ada di class Kereta
+     *
+     * @param nama (Nama Kereta)
+     * @param asal (Rute asal kereta)
+     * @param tujuan (Tujuan akhir kereta)
+     * @param tipeKereta (Tipe kereta [Lokal/antarkota])
+     */
     public Kereta(String nama, String asal, String tujuan, String tipeKereta) {
         this.nama = nama;
         this.asal = asal;
@@ -30,54 +39,65 @@ public class Kereta {
     }
 
     /**
+     * Method untuk menambahkan seat yang tersedia di kereta
      *
-     * @param s jumlah kursi
-     * @return menambahkan jumlah kursi
+     * @param seat (Object dari class Seat)
+     * @return true (Mengindikasikan bahwa penambahan seat di kereta berhasil)
      */
-    public boolean addSeat(Seat s){
-        seatList.add(s);
+    public boolean addSeat(Seat seat){
+        seatList.add(seat);
         return true;
     }
     
     /**
+     * Gettter dari variabel nama, untuk menghasilkan nama Kereta
      *
-     * @return mengambil nama kereta
+     * @return nama (Menghasilkan nama kereta)
      */
     public String getNama() {
         return nama;
     }
 
     /**
+     * Gettter dari variabel asal, untuk menghasilkan asal rute dari kereta
      *
-     * @return mengambil asal kereta
+     * @return asal (Menghasilkan asal kereta)
      */
     public String getAsal() {
         return asal;
     }
 
     /**
+     * Gettter dari variabel tujuan, untuk menghasilkan tujuan akhir kereta
      *
-     * @return mengambil tujuan kereta
+     * @return tujuan (Menghasilkan tujuan akhir dari kereta)
      */
     public String getTujuan() {
         return tujuan;
     }
 
     /**
+     * Gettter dari variabel tipeKereta, untuk menghasilkan tipe kereta (Lokal/Antarkota)
      *
-     * @return mengambil tipe kereta
+     * @return tipeKereta (Menghasilkan tipe kereta)
      */
     public String getTipeKereta() {
         return tipeKereta;
     }
 
     /**
+     * Gettter dari variabel seatList, untuk menghasilkan semua seat yang tersedia di kereta
      *
-     * @return mengambil list seat
+     * @return seatList (Menghasilkan semua seat yang tersedia)
      */
     public List<Seat> getSeatList() {
         return seatList;
     }
+    
+    /**
+     * Method yang digunakan untuk secara otomatis mengisi seat yang ada di kereta menggunakan perulangan. Dimana disini seat dari setiap kereta dibuat sama yaitu 32 seat. Lalu digunakan penkondisian (if else) untuk menghasilkan tipeSeat, noSeat, noGerbong yang berbeda antarseat.
+     *
+     */
     public void configureSeat() {
         Seat[] allSeat = new Seat[32];
         char code = 'A';

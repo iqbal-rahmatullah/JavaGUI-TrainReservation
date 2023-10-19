@@ -6,14 +6,22 @@ package trainreservations;
  */
 
 /**
- *
- * @author ASUS
+ * Class Customer untuk mempresentasikan data pribadi dari customer 
+ * 
+ * @author Kelompok 3
  */
 public class Customer {
     private String name;
     private String noHP;
     private String noKTP;
 
+    /**
+     * Constructor untuk memberi nilai variabel yang ada di class Customer
+     *
+     * @param name (Nama dari customer)
+     * @param noHP (No hp dari customer)
+     * @param noKTP (Identitas No KTP Customer)
+     */
     public Customer(String name, String noHP, String noKTP) {
         this.name = name;
         this.noHP = noHP;
@@ -21,32 +29,36 @@ public class Customer {
     }
 
     /**
+     * Gettter dari variabel name, untuk menghasilkan nama customer
      *
-     * @return mengembalikan nama customer
+     * @return name (nama dari customer)
      */
     public String getName() {
         return name;
     }
 
     /**
+     * Gettter dari variabel noHp, untuk menghasilkan No HP customer
      *
-     * @return mengembalikan nomor hp
+     * @return noHP (No hp dari customer
      */
     public String getNoHP() {
         return noHP;
     }
 
     /**
+     * Gettter dari variabel noKtp, untuk menghasilkan No KTP customer
      *
-     * @return mengembalikan nomor ktp
+     * @return noKTP (No KTP Customer)
      */
     public String getNoKTP() {
         return noKTP;
     }
 
     /**
+     * Method untuk mempresentasikan object Customer sebagai string
      *
-     * @return menampilkan data customer
+     * @return menampilkan semua variabel yang ada di class Customer
      */
     @Override
     public String toString() {
